@@ -10,7 +10,7 @@ warehouse and supplier level using time-series analysis.
 
 ## 🚀 Live Demo
 
-## 👉 https://deadstock-guard-assistant.streamlit.app/
+# 👉 https://deadstock-guard-assistant.streamlit.app/
 
     Upload a CSV or Excel file to:
     - Detect dead stock
@@ -20,42 +20,42 @@ warehouse and supplier level using time-series analysis.
 
 ## 🚀 Features
 
-## 📊 Inventory Health Analysis
+📊 Inventory Health Analysis
 
     Dead Stock, Slow Moving, and Healthy item classification
     Inventory turnover and blocked capital (₹) calculation
 
-## 📈 Demand Forecasting
+📈 Demand Forecasting
 
     30-day time-series demand forecast
     Forecast vs Current Stock visualization for stock-out prediction
 
-## 🏭 Warehouse-wise Analytics
+🏭 Warehouse-wise Analytics
 
     Multi-warehouse support
     Warehouse-level forecasting and reporting
 
-## 🚚 Supplier Performance Insights
+🚚 Supplier Performance Insights
 
     Supplier-wise restocking volume and purchase order count
     Visual charts for procurement decisions
 
-## 🧪 Data Quality Intelligence
+🧪 Data Quality Intelligence
 
     Automatic schema validation and column auto-mapping
     Data quality score with drilldown report
 
-## 📄 Automated Reporting
+📄 Automated Reporting
 
     One-click PDF inventory reports
     Warehouse-wise PDF generation
 
-## 📥 Flexible Data Upload
+📥 Flexible Data Upload
 
     Supports CSV and Excel files
     Sample template download included
 
-## 🛠 Tech Stack
+# 🛠 Tech Stack
 
     Frontend / UI: Streamlit, Plotly
     Data Processing: Pandas, NumPy
@@ -63,16 +63,16 @@ warehouse and supplier level using time-series analysis.
     Reporting: ReportLab
     Deployment: Streamlit Cloud
 
-## ▶️ Run Locally
+# ▶️ Run Locally
     pip install -r requirements.txt
     streamlit run main.py
 
-## 🎯 Problem Statement
+# 🎯 Problem Statement
 
     Manufacturing SMEs (Textile, Diamond, Brass, etc.) often over-order raw materials due to lack of forecasting tools, leading to idle inventory and blocked working capital.
     DeadStock Guard bridges this gap by converting raw sales data into clear, business-ready inventory insights.
 
-## 🧠 Architecture
+# 🧠 Architecture
 
     The project follows a modular layered architecture with separate layers for:
     Data ingestion & validation
@@ -82,7 +82,7 @@ warehouse and supplier level using time-series analysis.
     Reporting
     This makes the system scalable, maintainable, and production-ready.
 
-## 📌 Use Cases
+# 📌 Use Cases
 
     SME inventory optimization
     Dead stock reduction
@@ -90,12 +90,12 @@ warehouse and supplier level using time-series analysis.
     Academic final-year project
     Analytics portfolio project
 
-## 🏷 Versioning
+# 🏷 Versioning
 
     Current stable release: **v1.0**
     Git tags are used to mark stable production-ready versions.
 
-## 📜 License
+# 📜 License
 
     This project is developed for academic and learning purposes.
     You are free to explore, modify, and extend it.
