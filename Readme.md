@@ -1,104 +1,101 @@
-📦 DeadStock Guard
-Smart Inventory & Demand Forecasting for SMEs
+# 📦 DeadStock Guard – Smart Inventory Forecasting for SMEs
 
-DeadStock Guard is a data-driven supply chain analytics web application designed to help small and medium enterprises (SMEs) reduce losses caused by dead stock, overstocking, and poor demand planning.
+![GitHub release](https://img.shields.io/github/v/release/harshvaghasiya229/deadstock-guard)
+![Python](https://img.shields.io/badge/Python-3.9+-blue)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Live-brightgreen)](https://deadstock-guard-assistant.streamlit.app/)
 
-The system ingests historical sales data (CSV/XLSX), validates and cleans it automatically, and transforms it into actionable inventory insights through an intuitive, non-technical dashboard.
+DeadStock Guard is a data-driven inventory analytics platform designed for small and medium enterprises (SMEs).
+It helps businesses detect dead stock, forecast demand, predict stock-outs, and analyze inventory at a
+warehouse and supplier level using time-series analysis.
 
-🚀 Features
+## 🚀 Live Demo
 
-📊 Inventory Health Analysis
+## 👉 https://deadstock-guard-assistant.streamlit.app/
 
-Dead Stock, Slow Moving, and Healthy item classification
+    Upload a CSV or Excel file to:
+    - Detect dead stock
+    - Forecast demand
+    - View warehouse-level insights
+    - Download PDF reports
 
-Inventory turnover and blocked capital (₹) calculation
+## 🚀 Features
 
-📈 Demand Forecasting
+## 📊 Inventory Health Analysis
 
-30-day time-series demand forecast
+    Dead Stock, Slow Moving, and Healthy item classification
+    Inventory turnover and blocked capital (₹) calculation
 
-Forecast vs Current Stock visualization for stock-out prediction
+## 📈 Demand Forecasting
 
-🏭 Warehouse-wise Analytics
+    30-day time-series demand forecast
+    Forecast vs Current Stock visualization for stock-out prediction
 
-Multi-warehouse support
+## 🏭 Warehouse-wise Analytics
 
-Warehouse-level forecasting and reporting
+    Multi-warehouse support
+    Warehouse-level forecasting and reporting
 
-🚚 Supplier Performance Insights
+## 🚚 Supplier Performance Insights
 
-Supplier-wise restocking volume and purchase order count
+    Supplier-wise restocking volume and purchase order count
+    Visual charts for procurement decisions
 
-Visual charts for procurement decisions
+## 🧪 Data Quality Intelligence
 
-🧪 Data Quality Intelligence
+    Automatic schema validation and column auto-mapping
+    Data quality score with drilldown report
 
-Automatic schema validation and column auto-mapping
+## 📄 Automated Reporting
 
-Data quality score with drilldown report
+    One-click PDF inventory reports
+    Warehouse-wise PDF generation
 
-📄 Automated Reporting
+## 📥 Flexible Data Upload
 
-One-click PDF inventory reports
+    Supports CSV and Excel files
+    Sample template download included
 
-Warehouse-wise PDF generation
+## 🛠 Tech Stack
 
-📥 Flexible Data Upload
+    Frontend / UI: Streamlit, Plotly
+    Data Processing: Pandas, NumPy
+    Forecasting: Statsmodels (Time-Series Analysis)
+    Reporting: ReportLab
+    Deployment: Streamlit Cloud
 
-Supports CSV and Excel files
+## ▶️ Run Locally
+    pip install -r requirements.txt
+    streamlit run main.py
 
-Sample template download included
+## 🎯 Problem Statement
 
-🛠 Tech Stack
+    Manufacturing SMEs (Textile, Diamond, Brass, etc.) often over-order raw materials due to lack of forecasting tools, leading to idle inventory and blocked working capital.
+    DeadStock Guard bridges this gap by converting raw sales data into clear, business-ready inventory insights.
 
-Frontend / UI: Streamlit, Plotly
+## 🧠 Architecture
 
-Data Processing: Pandas, NumPy
+    The project follows a modular layered architecture with separate layers for:
+    Data ingestion & validation
+    Preprocessing
+    Analytics & forecasting
+    Visualization
+    Reporting
+    This makes the system scalable, maintainable, and production-ready.
 
-Forecasting: Statsmodels (Time-Series Analysis)
+## 📌 Use Cases
 
-Reporting: ReportLab
+    SME inventory optimization
+    Dead stock reduction
+    Demand planning and stock-out prevention
+    Academic final-year project
+    Analytics portfolio project
 
-Deployment: Streamlit Cloud
+## 🏷 Versioning
 
-▶️ Run Locally
-pip install -r requirements.txt
-streamlit run main.py
+    Current stable release: **v1.0**
+    Git tags are used to mark stable production-ready versions.
 
-🎯 Problem Statement
+## 📜 License
 
-Manufacturing SMEs (Textile, Diamond, Brass, etc.) often over-order raw materials due to lack of forecasting tools, leading to idle inventory and blocked working capital.
-DeadStock Guard bridges this gap by converting raw sales data into clear, business-ready inventory insights.
-
-🧠 Architecture
-
-The project follows a modular layered architecture with separate layers for:
-
-Data ingestion & validation
-
-Preprocessing
-
-Analytics & forecasting
-
-Visualization
-
-Reporting
-
-This makes the system scalable, maintainable, and production-ready.
-
-📌 Use Cases
-
-SME inventory optimization
-
-Dead stock reduction
-
-Demand planning and stock-out prevention
-
-Academic final-year project
-
-Analytics portfolio project
-
-📜 License
-
-This project is developed for academic and learning purposes.
-You are free to explore, modify, and extend it.
+    This project is developed for academic and learning purposes.
+    You are free to explore, modify, and extend it.
