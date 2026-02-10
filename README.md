@@ -1,6 +1,6 @@
 # 📦 DeadStock Guard – Smart Inventory Forecasting for SMEs
 
-![GitHub release](https://img.shields.io/github/v/release/harshvaghasiya229/deadstock-guard)
+![GitHub release](https://img.shields.io/github/v/release/harshvaghasiya229/deadstock-guard/latest)
 ![Python](https://img.shields.io/badge/Python-3.9+-blue)
 [![Streamlit App](https://img.shields.io/badge/Streamlit-Live-brightgreen)](https://deadstock-guard-assistant.streamlit.app/)
 
