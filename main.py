@@ -10,6 +10,18 @@ from src.forecasting import forecast_next_30_days
 from src.report import generate_pdf_report, generate_warehouse_pdfs
 from src.supplier_analytics import supplier_metrics
 
+@st.cache_data(show_spinner="Loading & cleaning data...")
+def load_and_clean(df):
+    return clean_data(df)
+
+@st.cache_data(show_spinner="📊 Analyzing inventory...")
+def cached_detect_dead_stock(df):
+    return detect_dead_stock(df)
+
+@st.cache_data(show_spinner="📈 Forecasting demand...")
+def cached_forecast(df):
+    return forecast_next_30_days(df)
+
 # --------------------------------------------------
 # Page Config
 # --------------------------------------------------
@@ -21,6 +33,8 @@ st.set_page_config(
 
 st.title("📦 DeadStock Guard")
 st.caption("Smart Inventory Forecasting for SMEs")
+progress_bar = st.progress(0)
+status_text = st.empty()
 
 # --------------------------------------------------
 # Sample File Download
@@ -57,7 +71,11 @@ uploaded = st.file_uploader(
 if uploaded:
     try:
         # Load + auto-map + save
+        status_text.text("📂 Loading uploaded file...")
+        progress_bar.progress(10)
+
         load_result = load_sales_data(uploaded)
+
 
         # Backward-compatible handling
         if isinstance(load_result, tuple):
@@ -66,7 +84,9 @@ if uploaded:
         else:
             df = load_result
 
-        df = clean_data(df)
+        status_text.text("🧹 Cleaning data...")
+        progress_bar.progress(25)
+        df = load_and_clean(df)
 
         # --------------------------------------------------
         # Raw Data Preview
@@ -84,7 +104,10 @@ if uploaded:
         # --------------------------------------------------
         # Inventory Analysis (WAREHOUSE-AWARE)
         # --------------------------------------------------
-        result = detect_dead_stock(df)
+        status_text.text("📊 Analyzing inventory health...")
+        progress_bar.progress(45)
+
+        result = cached_detect_dead_stock(df)
 
         dead_count = (result["Status"] == "Dead Stock").sum()
         slow_count = (result["Status"] == "Slow Moving").sum()
@@ -130,7 +153,10 @@ if uploaded:
             filtered_df = df[df["Product_Name"] == selected_product]
             stock_row = result[result["Product"] == selected_product]
 
-        forecast_df = forecast_next_30_days(filtered_df)
+        status_text.text("📈 Forecasting demand...")
+        progress_bar.progress(70)
+
+        forecast_df = cached_forecast(filtered_df)
 
         if forecast_df is not None and not stock_row.empty:
             current_stock = stock_row["Current_Stock"].values[0]
@@ -187,7 +213,8 @@ if uploaded:
 
         if st.button("Generate PDF Report"):
             pdf_path = "deadstock_guard_report.pdf"
-            generate_pdf_report(result, pdf_path)
+            with st.spinner("📄 Generating PDF report..."):
+                generate_pdf_report(result, pdf_path)
 
             with open(pdf_path, "rb") as f:
                 st.download_button(
@@ -219,6 +246,8 @@ if uploaded:
                             mime="application/pdf"
                         )
                     os.remove(pdf)
+        progress_bar.progress(100)
+        status_text.text("✅ Dashboard ready")
 
     except ValueError as ve:
         st.error(f"❌ Data Validation Error: {ve}")
